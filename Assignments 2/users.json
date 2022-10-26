@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Arhan Zeeshan",
+    "age": 90,
+    "IsDeveloper": true,
+    "role": "employee"
+  },
+  {
+    "id": 2,
+    "name": "Haya Zeeshan",
+    "age": 90,
+    "IsDeveloper": true,
+    "role": "admin"
+  },
+  {
+    "id": 3,
+    "name": "Hayan Zeeshan",
+    "age": 30,
+    "IsDeveloper": true,
+    "role": "employee"
+  }
+]
