@@ -5,4 +5,4 @@ let findSingleValue = lonely.filter((lonelyValue) => {
     lonely.lastIndexOf(lonelyValue)
   );
 });
-console.log("The Single Value is " + String(findSingleValue));
+document.write("The Single Value is " + String(findSingleValue));
