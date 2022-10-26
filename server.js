@@ -1,24 +1,46 @@
-const http = require("http");
-const fs = require("fs");
+const express = require("express");
+const app = express();
 const port = 3000;
-
-const server = http.createServer(function (req, res) {
-  res.writeHead(200, { "Content-Type": "text/javascript" });
-  fs.readFile("./assignment1.js", function (error, data) {
-    if (error) {
-      res.writeHead(404);
-      res.write("Error: File not Found");
-    } else {
-      res.write(data);
+app.get("/users", (res, req) => {
+  res.status(200).send(
+    {
+      id: 1,
+      name: "Arhan Zeeshan",
+      Message: "Successfull",
+    },
+    {
+      id: 2,
+      name: "Hayan Zeeshan",
+      Message: "Successfull",
+    },
+    {
+      id: 3,
+      name: "Haya Zeeshan",
+      Message: "Successfull",
     }
-    res.end();
+  );
+});
+app.get("/user/2", (res, req) => {
+  res.status(200).send({
+    id: 2,
+    name: "Hayan Zeeshan",
+    Message: "Successfull",
   });
 });
-
-server.listen(port, function (error) {
-  if (error) {
-    console.log("Something Went Wrong", error);
-  } else {
-    console.log("Server is listening on port " + port);
-  }
+app.get("/user/3", (res, req) => {
+  res.status(200).send({
+    id: 3,
+    name: "Haya Zeeshan",
+    Message: "Successfull",
+  });
+});
+app.get("/user/1", (res, req) => {
+  res.status(200).send({
+    id: 1,
+    name: "Arhan Zeeshan",
+    Message: "Successfull",
+  });
+});
+app.listen(port, () => {
+  console.log(`Server Running on Port ${port}`);
 });
