@@ -1,8 +1,8 @@
 const express = require("express");
-const PORT = 1234;
+const PORT = 9000;
 
 // requiring services
-const { listUsers, getUser, addUser, DtUser } = require("./services");
+const { listUsers, getUser, addUser } = require("./services");
 
 const app = express();
 
@@ -18,9 +18,6 @@ app.get("/users", (req, res) => {
   res.send(users);
 });
 
-app.get("/", (req, res) => {
-  res.send(`<h1>This is Assignments 2.</h1>`);
-});
 /**
  * get a user with id
  * @param userId
@@ -51,10 +48,7 @@ app.post("/users", (req, res) => {
 /**
  * delete a user
  */
-app.delete("/users/delete/:userId", (req, res) => {
-  res.send("arhan");
-});
 
 app.listen(PORT, () => {
-  console.log(`Server Running on Port ${PORT}`);
+  console.log(`server started on port ${PORT}`);
 });

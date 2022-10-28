@@ -2,22 +2,22 @@
   {
     "id": 1,
     "name": "Arhan Zeeshan",
-    "age": 90,
-    "IsDeveloper": true,
+    "age": 30,
+    "profession": "SSE",
     "role": "employee"
   },
   {
     "id": 2,
     "name": "Haya Zeeshan",
     "age": 90,
-    "IsDeveloper": true,
+    "profession": "SE",
     "role": "admin"
   },
   {
     "id": 3,
     "name": "Hayan Zeeshan",
-    "age": 30,
-    "IsDeveloper": true,
+    "age": 90,
+    "profession": "SE",
     "role": "employee"
   }
 ]
