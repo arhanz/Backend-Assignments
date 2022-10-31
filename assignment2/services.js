@@ -1,29 +1,33 @@
-const fs = require('fs')
+const fs = require("fs");
 
-let users = fs.readFileSync('users.json', 'utf-8')
+let users = fs.readFileSync("users.json", "utf-8");
 
-users = JSON.parse(users)
+users = JSON.parse(users);
 
 const listUsers = () => {
-  return users
-}
+  return users;
+};
 
-const getUser = userId => {
-  userId = Number(userId)
+const getUser = (userId) => {
+  userId = Number(userId);
 
-  return users.find(user => user.id === userId)
-}
+  return users.find((user) => user.id === userId);
+};
+const deleteUser = (userId) => {
+  userId = Number(userId);
+  return users.filter((user) => user.id != userId);
+};
 
-const addUser = user => {
-  users.unshift(user)
+const addUser = (user) => {
+  users.push(user);
 
-  fs.writeFileSync('users.json', JSON.stringify(users), 'utf-8')
+  fs.writeFileSync("users.json", JSON.stringify(users), "utf-8");
 
-  return 'SUCCESS: user added'
-}
-
+  return "SUCCESS: user added";
+};
 module.exports = {
   listUsers: listUsers,
   getUser: getUser,
-  addUser: addUser
-}
+  addUser: addUser,
+  deleteUser: deleteUser,
+};
